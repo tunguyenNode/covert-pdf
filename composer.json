@@ -1,0 +1,15 @@
+{
+  "require": {
+    "slim/slim": "^4.10",
+    "slim/psr7": "^1.5",
+    "php-di/php-di": "^6.4",
+    "twig/twig": "^3.4",
+    "mikehaertl/phpwkhtmltopdf": "^2.5",
+    "vlucas/phpdotenv": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

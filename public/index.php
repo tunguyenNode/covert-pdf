@@ -23,7 +23,7 @@ $app = AppFactory::create();
 
 // Cấu hình Twig
 $container->set('twig', function () {
-    $loader = new FilesystemLoader(__DIR__ . '/../templates');
+    $loader = new FilesystemLoader(__DIR__ . '/templates');
     return new Environment($loader);
 });
 

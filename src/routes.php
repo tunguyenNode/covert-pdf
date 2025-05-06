@@ -3,17 +3,11 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use mikehaertl\wkhtmlto\Pdf;
 
-$app->post('/api/generate-pdf', function (Request $request, Response $response) use ($app) {
+$app->post('/api/render-page', function (Request $request, Response $response) use ($app) {
     try {
-        // Lấy dữ liệu từ body$request
-
+        // Lấy dữ liệu từ body
         $data = $request->getBody()->getContents();
         $data = json_decode($data, true);
-
-        // Debug: Ghi log dữ liệu nhận được
-        var_dump('Received data: ' . print_r($data, true));
-
-        // Kiểm tra dữ liệu
         if (empty($data) || !is_array($data)) {
             throw new Exception('Invalid or empty data provided');
         }
@@ -22,35 +16,50 @@ $app->post('/api/generate-pdf', function (Request $request, Response $response) 
         $twig = $app->getContainer()->get('twig');
         $html = $twig->render('page.html.twig', ['data' => $data]);
 
-        // Tạo file HTML tạm
-        $tempHtmlFile = __DIR__ . '/../public/storage/temp_' . uniqid() . '.html';
-        if (!file_put_contents($tempHtmlFile, $html)) {
-            throw new Exception('Failed to create temporary HTML file');
+        // Lưu file HTML vào storage
+        $htmlFileName = 'page_' . uniqid() . '.html';
+        $htmlFilePath = __DIR__ . '/../' . $_ENV['STORAGE_PATH'] . '/' . $htmlFileName;
+        if (!file_put_contents($htmlFilePath, $html)) {
+            throw new Exception('Failed to create HTML file');
         }
-        $htmlUrl = $_ENV['APP_URL'] . '/storage/' . basename($tempHtmlFile);
+
+        // Trả về URL của file HTML
+        $htmlUrl = $_ENV['APP_URL'] . '/storage/' . $htmlFileName;
+        $response->getBody()->write(json_encode(['html_url' => $htmlUrl]));
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+
+    } catch (Exception $e) {
+        error_log('Error in /api/render-page: ' . $e->getMessage());
+        $response->getBody()->write(json_encode(['error' => $e->getMessage()]));
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+    }
+});
+
+
+
+$app->post('/api/generate-pdf', function (Request $request, Response $response) use ($app) {
+    try {
+        // Lấy html_url từ body
+        $data = $request->getBody()->getContents();
+        $data = json_decode($data, true);
+        if (empty($data['html_url'])) {
+            throw new Exception('html_url is required');
+        }
+        $htmlUrl = $data['html_url'];
 
         // Khởi tạo wkhtmltopdf
         $pdf = new Pdf([
-            'binary' => $_ENV['WKHTMLTOPDF_PATH'],
-            'commandOptions' => [
-                'enableLocalFileAccess' => true
-            ]
+            'binary' => $_ENV['WKHTMLTOPDF_PATH']
         ]);
-
         $pdf->addPage($htmlUrl);
 
         // Tạo tên file PDF
         $pdfFileName = 'output_' . uniqid() . '.pdf';
-        $pdfFilePath = __DIR__  . $_ENV['STORAGE_PATH'] . '/' . $pdfFileName;
+        $pdfFilePath = __DIR__ . '/../' . $_ENV['STORAGE_PATH'] . '/' . $pdfFileName;
 
         // Lưu file PDF
         if (!$pdf->saveAs($pdfFilePath)) {
             throw new Exception($pdf->getError() ?: 'Failed to generate PDF');
-        }
-
-        // Xóa file HTML tạm
-        if (file_exists($tempHtmlFile)) {
-            unlink($tempHtmlFile);
         }
 
         // Trả về link PDF
@@ -59,8 +68,7 @@ $app->post('/api/generate-pdf', function (Request $request, Response $response) 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 
     } catch (Exception $e) {
-        // Debug: Ghi log lỗi
-        error_log('Error: ' . $e);
+        error_log('Error in /api/generate-pdf: ' . $e->getMessage());
         $response->getBody()->write(json_encode(['error' => $e->getMessage()]));
         return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
     }

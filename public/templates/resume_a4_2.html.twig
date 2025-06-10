@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Skills Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container resume-container">
+    <!-- Header -->
+    <div class="section-title ">
+        <span class="font-15">言語スキル</span>
+        <span class="font-10"> Language skills</span>
+    </div>
 
+    <!-- Language Section -->
+    <div class="form-section">
+        <div class="form-group" style="border-bottom: 1px dashed #ccc;">
+            <label>
+                <span class="font-15 d-block">その他他</span>
+                <span class="font-10 d-block">Japanese</span>
+            </label>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-group">
+            <label>
+                <span class="font-15 d-block">その他他</span>
+                <span class="font-10 d-block">Other language</span>
+            </label>
+            <div class="form-input"></div>
+        </div>
+    </div>
+
+
+    <!-- Additional Work Question -->
+    <div class="section-title">
+        <span class="font-15">趣味・特技</span>
+        <span class="font-10">Hobbies,Specialties</span>
+    </div>
+    <div class="large-input"></div>
+
+    <!-- Motivation Section -->
+    <div class="section-title ">
+        <span class="font-15">長所・短所</span>
+        <span class="font-10">Strengths and weaknesses</span>
+    </div>
+    <div class="large-input"></div>
+
+    <!-- Additional Requests Section -->
+    <div class="section-title ">
+        <span class="font-15">学生時代の研究課題や専攻</span>
+        <span class="font-10">Your research topic or major (in university/school)</span>
+    </div>
+    <div class="large-input"></div>
+    <div class="section-title ">
+        <span class="font-15">学生時代に勉強以外に力を注いだこと （例えば：サークル活動、スポーツ、アルバイトなど）</span>
+        <span class="font-10">Your Focus during school year (club activities,Sports,Part-time-job,etc.)</span>
+    </div>
+    <div class="large-input"></div>
+    <div class="section-title ">
+        <span class="font-15">本人希望記入欄 （特に給料、職種、勤務時間、勤務地などに希望があれば記入）</span>
+        <span class="font-10">Additional request (Salary, Position,Work time and location,etc.)</span>
+    </div>
+    <div class="large-input mb-3"></div>
+    <!-- Dependent Section -->
+    <div class="form-section mb-5 p-0">
+        <div class="row" >
+            <div class="form-group col-md-4 p-0">
+                <label style="padding: 10px 10px; background-color: rgb(233, 236, 239); margin-left: 12px">
+                    <span class="font-15 d-block">扶養家族数 (配偶者を除く)</span>
+                    <span class="font-10 d-block">Number of dependents (excluding spouse)</span>
+                </label>
+                <div class="form-input"></div>
+            </div>
+            <div class="form-group col-md-4 p-0" style="border-left: 1px solid">
+                <label style="padding: 10px 20px; background-color: rgb(233, 236, 239)">
+                    <span class="font-15 d-block">配偶者</span>
+                    <span class="font-10 d-block">Spouse</span>
+                </label>
+                <div class="radio-group">
+                    <input type="radio" name="spouse" id="yes" class="form-check-input">
+                    <label for="yes">
+                        <span class="d-block font-15">有</span>
+                        <span class="d-block font-10">Yes</span>
+                    </label>
+                    <input type="radio" name="spouse" id="no" class="form-check-input">
+                    <label for="no">
+                        <span class="d-block font-15">無</span>
+                        <span class="d-block font-10">No</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-md-4 p-0"  style="border-left: 1px solid">
+                <label style="padding: 10px 20px;background-color: rgb(233, 236, 239) ">
+                    <span class="font-15 d-block">配偶者の扶養義務</span>
+                    <span class="font-10 d-block">Dependent spouse</span>
+                </label>
+                <div class="radio-group">
+                    <input type="radio" name="dependent" id="yes-dependent" class="form-check-input">
+                    <label for="yes-dependent">
+                        <span class="d-block font-15">有</span>
+                        <span class="d-block font-10">Yes</span>
+                    </label>
+                    <input type="radio" name="dependent" id="no-dependent" class="form-check-input">
+                    <label for="no-dependent">
+                        <span class="d-block font-15">無</span>
+                        <span class="d-block font-10">No</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Note -->
+    <div class="section-title ">
+        <span class="font-15">採用者側の記入欄 (何も書かないでください)</span>
+        <span class="font-10">Please do not write anything here.</span>
+    </div>
+    <div class="large-input"></div>
+</div>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .resume-container {
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+        background-color: #e9ecef;
+        padding: 5px 10px;
+        font-weight: bold;
+        border: 1px solid #000;
+    }
+
+    .form-section {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        /*border-bottom: 1px dashed #ccc;*/
+        padding: 5px 0;
+    }
+
+    .form-group:last-child {
+        border-bottom: none;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        /*font-size: 14px;*/
+        margin-right: 10px;
+    }
+
+    .form-input {
+        flex-grow: 1;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .large-input {
+        height: 150px;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    .form-check-input {
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .radio-group label {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .font-15{
+        font-size: 15px;
+    }
+
+    .font-10{
+        font-size: 10px;
+    }
+
+    .font-15{
+        .col-md-1{
+            font-weight: 600;
+        }
+    }
+</style>

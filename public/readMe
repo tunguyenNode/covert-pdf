@@ -1,0 +1,73 @@
+table名	app_wasabi.resume_requests			
+				
+Field	Type	Length	Key	用途
+id	INT	11	PRIMARY	
+user_id	INT	11		リクエストしたユーザーのID
+type	VARCHAR	50		"リクエストした履歴書のtype
+fulltime_a4, fulltime_a3, parttime_a4, parttime_a3, のどれかを想定しています。"
+disable_private	TINYINT	1		0=通常の出力, 1=個人情報を表示しない出力
+data	TEXT			"履歴書用データをjsonで格納して連携します。
+データ詳細は「履歴書用データ」シートをご確認ください。"
+created	DATETIME			作成日時
+modified	DATETIME			更新日時
+
+
+key	データの形式	fulltime	parttime	private	内容		
+em_number	text	◯	◯		EMナンバー		fulltime=◯　→　fulltime用履歴書に使うデータです。
+job_ids	text	◯	◯		"JOB応募用の場合、関連するjobデータのidを印字する
+/ 企業id xxx / 求人id xxx / 応募id xxx　というテキストになる
+EMナンバーの右横に印字"		parttime=◯　→　fulltime用履歴書に使うデータです。
+today	date	◯	◯		生成した日付、新verでは不要（API側でセットする）		private=◯　→　disable_private=trueのリクエストの場合、このデータは非表示としたいです。
+full_name	text	◯	◯	◯	ふりがな		
+full_name_en	text	◯	◯	◯	名前		
+nationality_id	text	◯	◯		国籍		
+birthday	date	◯	◯	◯	生年月日		
+age	int	◯	◯		満x歳を表示		
+zipcode	text	◯	◯	◯	郵便番号		
+address	text	◯	◯	◯	住所		
+mobile	text	◯	◯	◯	電話番号		
+email_account	text	◯	◯	◯	emailのアカウント部分		
+email_domain	text	◯	◯	◯	emailのドメイン部分		
+residence_qualification_id	text	◯	◯		在留資格		
+residency_term_limit	date	◯	◯		在留期限		
+histories	array	◯	◯		"学歴・職歴・受賞歴
+$rows[
+　text => '',
+　style => '',
+]"		
+qualifications	array	◯	◯		"資格
+$rows[
+　text => '',
+]"		
+image	text	◯	◯	◯	"証明写真
+画像path？（別途API側で取得？）"		
+japanese	text	◯	◯		言語スキル　日本語		
+other_language	text	◯	◯		言語スキル　その他		
+hobbies_and_specialties	text	◯			趣味・特技		
+strengths_and_weaknesses	text	◯			長所・短所		
+research_subject	text	◯			学生時代の研究課題や専攻		
+focus_during_school	text	◯			学生時代に勉強以外に力を注いだこと		
+additional_requests	text	◯	◯		本人希望記入欄		
+number_of_dependants	text	◯	◯		扶養家族数		
+spuose	tinyint	◯	◯		配偶者		
+dependant_spuose	tinyint	◯	◯		配偶者の扶養義務		
+pt_what_days_can_work	array		◯		"何曜日に働けますか？何時に働けますか？
+曜日 => [
+　ans => 0,1,2（働ける, 働けない, まだわからない）,
+　text => 働けるの右テキスト,
+]"		
+pt_already_work	text		◯		他の場所でアルバイトしていますか？		
+pt_why_chose	text		◯		このアルバイトを選んだ理由や、アピールできること		
+pt_address_station_line	text		◯	◯	近くの駅　路線		
+pt_address_station_name	text		◯	◯	近くの駅　駅		
+pt_address_station_walk	text		◯	◯	近くの駅　歩いて		
+pt_school_name	text		◯	◯	学校名		
+pt_school_station_line	text		◯	◯	近くの駅　路線		
+pt_school_station_name	text		◯	◯	近くの駅　駅		
+pt_school_station_walk	text		◯	◯	近くの駅　歩いて		
+							
+							
+							
+sample data							
+{"em_number":"EM No.900","job_ids":"","today":"2025-05-23","full_name":"テスト ユーザー","full_name_en":"TEST USER","nationality_id":"オーストラリア","birthday":"1990-01-01","age":35,"zipcode":"aaa","address":"台湾 test test test","mobile":"080-3856-8623","email_account":"tsutsui","email_domain":"five-inc.jp","residence_qualification_id":"留学","residency_term_limit":"2028-03-31","histories":[{"text":"　　　　　　　　　　　　　　　　　　　　　　　　学歴","style":"bold"},{"text":"2010\/01〜2011\/01　おおさかだいがく test test (卒業)"},{"text":"2020\/04〜2022\/03　テスト大学 テスト学部 テスト学科 (卒業)"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　　職歴","style":"bold"},{"text":"1901\/07〜1908\/03　ccc test"},{"text":"2010\/10〜2012\/02　aaa ppp"},{"text":"2022\/02〜2023\/02　test test"},{"text":"2022\/02〜2021\/03　test test"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　  受賞歴","style":"bold"},{"text":"1961\/02　　　　　　test 受賞"},{"text":"2013\/10　　　　　　hoge1 受賞"},{"text":"2015\/12　　　　　　hoge2 受賞"},{"text":"2016\/03　　　　　　hoge3 受賞"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　以上"}],"qualifications":[{"text":"2017\/12　てすと"},{"text":"2017\/04　testaa"},{"text":"2020\/08　機微力検定 K5 681点 (基本的なグローバル機微力をある程度理解することができる)"}],"image":"\/share\/wasabi\/app\/webroot\/files\/User\/1\/photo_of_yourself\/test.jpeg","japanese":"JLPT N1 100点、BJT J3 400点","other_language":"英語(日常会話レベル)、フランス語(ビジネスレベル)、TOEIC(toeic)、TOEFL(toefl)、IELTS(ielts)","hobbies_and_specialties":"趣味・特技","strengths_and_weaknesses":"長所、短所","research_subject":"","focus_during_school":"注力\r\n注力","additional_requests":"希望勤務地：京都府、大阪府、兵庫県\n希望記入欄\r\n","number_of_dependants":"1","spouse":"0","dependant_spouse":"0","pt_what_days_can_work":{"0":{"ans":"0","text":""},"1":{"ans":"0","text":""},"2":{"ans":"0","text":""},"3":{"ans":"0","text":""},"4":{"ans":"0","text":""},"5":{"ans":"0","text":""},"6":{"ans":"0","text":""},"other":"test8"},"pt_already_work":"ローソンでアルバイトしています。\r\n週10時間働いています。","pt_why_chose":"アピールできること","pt_address_station_line":"長堀鶴見緑地","pt_address_station_name":"本町","pt_address_station_walk":"35","pt_school_name":"学校名テスト","pt_school_station_line":"大阪メトロ","pt_school_station_name":"梅田","pt_school_station_walk":"15"}							
+							

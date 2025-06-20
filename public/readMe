@@ -70,4 +70,13 @@ pt_school_station_walk	text		◯	◯	近くの駅　歩いて
 							
 sample data							
 {"em_number":"EM No.900","job_ids":"","today":"2025-05-23","full_name":"テスト ユーザー","full_name_en":"TEST USER","nationality_id":"オーストラリア","birthday":"1990-01-01","age":35,"zipcode":"aaa","address":"台湾 test test test","mobile":"080-3856-8623","email_account":"tsutsui","email_domain":"five-inc.jp","residence_qualification_id":"留学","residency_term_limit":"2028-03-31","histories":[{"text":"　　　　　　　　　　　　　　　　　　　　　　　　学歴","style":"bold"},{"text":"2010\/01〜2011\/01　おおさかだいがく test test (卒業)"},{"text":"2020\/04〜2022\/03　テスト大学 テスト学部 テスト学科 (卒業)"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　　職歴","style":"bold"},{"text":"1901\/07〜1908\/03　ccc test"},{"text":"2010\/10〜2012\/02　aaa ppp"},{"text":"2022\/02〜2023\/02　test test"},{"text":"2022\/02〜2021\/03　test test"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　  受賞歴","style":"bold"},{"text":"1961\/02　　　　　　test 受賞"},{"text":"2013\/10　　　　　　hoge1 受賞"},{"text":"2015\/12　　　　　　hoge2 受賞"},{"text":"2016\/03　　　　　　hoge3 受賞"},{"text":""},{"text":"　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　以上"}],"qualifications":[{"text":"2017\/12　てすと"},{"text":"2017\/04　testaa"},{"text":"2020\/08　機微力検定 K5 681点 (基本的なグローバル機微力をある程度理解することができる)"}],"image":"\/share\/wasabi\/app\/webroot\/files\/User\/1\/photo_of_yourself\/test.jpeg","japanese":"JLPT N1 100点、BJT J3 400点","other_language":"英語(日常会話レベル)、フランス語(ビジネスレベル)、TOEIC(toeic)、TOEFL(toefl)、IELTS(ielts)","hobbies_and_specialties":"趣味・特技","strengths_and_weaknesses":"長所、短所","research_subject":"","focus_during_school":"注力\r\n注力","additional_requests":"希望勤務地：京都府、大阪府、兵庫県\n希望記入欄\r\n","number_of_dependants":"1","spouse":"0","dependant_spouse":"0","pt_what_days_can_work":{"0":{"ans":"0","text":""},"1":{"ans":"0","text":""},"2":{"ans":"0","text":""},"3":{"ans":"0","text":""},"4":{"ans":"0","text":""},"5":{"ans":"0","text":""},"6":{"ans":"0","text":""},"other":"test8"},"pt_already_work":"ローソンでアルバイトしています。\r\n週10時間働いています。","pt_why_chose":"アピールできること","pt_address_station_line":"長堀鶴見緑地","pt_address_station_name":"本町","pt_address_station_walk":"35","pt_school_name":"学校名テスト","pt_school_station_line":"大阪メトロ","pt_school_station_name":"梅田","pt_school_station_walk":"15"}							
-							
+
+user_idとkey（共通鍵）を使って、tokenを生成しようと考えています。
+WA.SA.Bi.側では、以下のメソッドでtokenを生成しています。
+"    protected function _generateToken($userId, $key) {
+        $data = $userId . $key;
+        return Security::hash($data, 'sha256', true);
+    }"
+
+$keyはPDF-API側と同じ、一定の長さのランダムな文字列を使おうと考えています。
+

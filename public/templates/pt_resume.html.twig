@@ -1,772 +1,309 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アルバイト履歴書</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<body>
-<div class="row">
-    <div class="col-md-6" id="block-1">
-        <div class="container resume-container">
-            <!-- Header -->
-            <div class="row">
-                <div class="col-6">
-                    <h1 class="resume-title">アルバイト履 歴 書</h1>
-                </div>
-                <!--        <div class="col-4 text-center">-->
-                <!--            <div class="date-box">-->
-                <!--                <span>年</span>-->
-                <!--                <span>月</span>-->
-                <!--                <span>日</span>-->
-                <!--            </div>-->
-                <!--        </div>-->
-                <div class="col-4 text-end">
-                    <span class="d-block title">年 月 日　現在</span>
-                    <span class="d-block sub-title"> yyyy/mm/dd as of now</span>
-                </div>
-                <div class="col-2 text-end">
-                    logo morikosan
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="row">
-                <!-- Left Column -->
-                <div class="col-md-10">
-                    <div class="form-section p-0" style="border-bottom: unset;">
-                        <div class="form-group p-0" style="border-bottom: 1px dashed;">
-                            <label>
-                        <span class="d-block title">
-                            フリガナ
-                        </span>
-                                <span class="d-block sub-title">
-                            Furigana
-                        </span>
-                            </label>
-                            <div class="form-input"></div>
-                        </div>
-                        <div class="form-group p-0">
-                            <label>
-                        <span class="d-block title">
-                            名 前
-                        </span>
-                                <span class="d-block sub-title">
-                            Name
-                        </span>
-                            </label>
-                            <div class="form-input"></div>
-                        </div>
-                        <div class="form-group p-0">
-                            <label>
-                        <span class="d-block title">
-                            国 籍
-                        </span>
-                                <span class="d-block sub-title">
-                            Nationality
-                        </span>
-                            </label>
-                            <div class="form-input"></div>
-                        </div>
-                        <div class="form-group p-0">
-                            <label>
-                        <span class="d-block title">
-                           生年月日
-                        </span>
-                                <span class="d-block sub-title">
-                            Date of birth
-                        </span>
-                            </label>
-                            <div class="birth-date form-input ">
-                                <span>    年</span>
-                                <span>月</span>
-                                <span>日 </span>
-                                <span>(満   歳)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right Column -->
-                <div class="col-md-2">
-                    <div class="photo-section">
-                        <div class="photo-box">
-                            <p>写真 ID Photo (30mm×40mm)</p>
-                            <p>写真の裏面に、名前、学校名を書いてください。</p>
-                            <p>Please write your name and name of school/university on the back.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="header__end">
-                <div class="row header__end__address">
-                    <div class="col-md-7 col-left">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label>
-                            <span class="d-block title">
-                                住 所
-                            </span>
-                                    <span class="d-block sub-title">
-                                Address
-                            </span>
-                                </label>
-                                <div class="form-input"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-right">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label>
-                                    <span class="d-block title">近くの駅</span>
-                                    <span class="d-block sub-title">Nearest Station</span>
-                                </label>
-                                <div>
-                                    <span class="d-block">線</span>
-                                    <span class="d-block">駅から歩いて　　　分</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row header__end__tel">
-                    <div class="col-md-3 col-left">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label>
-                            <span class="d-block title">
-                                電話番号
-                            </span>
-                                    <span class="d-block sub-title">
-                                Tel
-                            </span>
-                                </label>
-                                <div class="form-input"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 col-right">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label style="height: 61px; display: flex; align-items: center;">
-                                    <span class="d-block" style="font-size: 12px">E-mail</span>
-                                </label>
-                                <div style="display: flex; align-items: center;">
-                                    <span class="d-block">@</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row header__end__residence">
-                    <div class="col-md-5 col-left">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label>
-                            <span class="d-block title">
-                                在留資格
-                            </span>
-                                    <span class="d-block sub-title">
-                                Status of residence
-                            </span>
-                                </label>
-                                <div class="form-input"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-right">
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label>
-                                    <span class="d-block title">在留期限</span>
-                                    <span class="d-block sub-title">Period of stay</span>
-                                </label>
-                                <div class="">
-                                    <span class="d-block">年     月    日   まで有効</span>
-                                    <span class="d-block sub-title">*Valid until yyyy/mm/dd</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row header__end__school">
-                    <div class="col-md-7 col-left">
-                        <div class="form-section" style="border-bottom: 1px solid #000;">
-                            <div class="form-group">
-                                <label>
-                        <span class="d-block title">
-                            学校名
-                        </span>
-                                    <span class="d-block sub-title">
-                            School name
-                        </span>
-                                </label>
-                                <div class="form-input"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-right">
-                        <div class="form-section" style="border-bottom: 1px solid #000;">
-
-                            <div class="form-group">
-                                <label>
-                                    <span class="d-block title">近くの駅</span>
-                                    <span class="d-block sub-title">Nearest</span>
-                                </label>
-                                <div class="">
-                                    <span class="d-block">線</span>
-                                    <span class="d-block">駅から歩いて　　　分</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education/Employment Section -->
-            <div class="section-title mt-4">
-                <span class="title" style="margin-right: 20px">母国・日本での　学歴 ／ 職歴 ／ 受賞歴 </span>
-                <span class="sub-title">Education history / Employment history / Awards received (in your home country & in Japan)</span>
-            </div>
-            <div class="large-input" style="height: 417px"></div>
-
-            <!-- Qualifications Section -->
-            <div class="section-title" style="border-top: unset">
-                <span class="title" style="margin-right: 20px">資格 ／ 免許 </span>
-                <span class="sub-title">Qualifications / Licenses</span>
-            </div>
-            <div class="large-input"></div>
-
-            <!-- Footer Notes -->
-            <div class="notes mt-4">
-                <div class="row">
-                    <div class="col-md-1">注意:</div>
-                    <div class="col-md-4">
-                        <div>1.黒いボールペンで書く</div>
-                        <div>2.全て日本語で書く（外国の学校名などはカタカナまたは英語で書く）</div>
-                        <div>3.※マークがついているところは◯をつける</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div>1.Please write with a black ballpen.</div>
-                        <div>2.Please write everything in Japanese.<br>
-                            (Names of schools may be written either in katakana or English)
-                        </div>
-                        <div>3.Please circle the applicable option for section with ※</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6" id="block-2">
-        <div class="container resume-container">
-            <!-- Header -->
-            <div class="section-title ">
-                <span class="font-15">言語スキル</span>
-                <span class="font-10"> Language skills</span>
-            </div>
-
-            <!-- Language Section -->
-            <div class="form-section">
-                <div class="form-group" style="border-bottom: 1px dashed #ccc;">
-                    <label>
-                        <span class="font-15 d-block">その他他</span>
-                        <span class="font-10 d-block">Japanese</span>
-                    </label>
-                    <div class="form-input"></div>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <span class="font-15 d-block">その他他</span>
-                        <span class="font-10 d-block">Other language</span>
-                    </label>
-                    <div class="form-input"></div>
-                </div>
-            </div>
-
-            <!-- Work Schedule Section -->
-            <div class="section-title ">
-                <span class="font-15">何曜日に働けますか？何時に働けますか？ </span>
-                <span class="font-10">Which days of the week and what time can you work?</span>
-            </div>
-            <div class="form-section">
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row mb-1 font-15">
-                    <div class="col-md-1">
-                        月曜日
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働ける
-                    </div>
-                    <div class="col-md-5">
-                        dasd
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        働けない
-                    </div>
-                    <div class="col-md-2">
-                        <input type="checkbox" class="form-check-input">
-                        まだわからない
-                    </div>
-                </div>
-                <div class="row font-15">
-                    <div class="col-md-1">
-                        その他
-                    </div>
-                    <div class="col-md-11">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Work Question -->
-            <div class="section-title">
-                <span class="font-15">他の場所でアルバイトしていますか？そのアルバイト先で週何時間働いていますか？</span>
-                <span class="font-10">Are you working part-time at any other places? How many hours do you work there?</span>
-            </div>
-            <div class="large-input"></div>
-
-            <!-- Motivation Section -->
-            <div class="section-title ">
-                <span class="font-15">このアルバイトを選んだ理由や、アピールできること</span>
-                <span class="font-10">Tell us why you want to apply for this part-time job, and tell us about yourself.</span>
-            </div>
-            <div class="large-input"></div>
-
-            <!-- Additional Requests Section -->
-            <div class="section-title ">
-                <span class="font-15">本人希望記入欄 （特に給料、職種、勤務時間、勤務地などに希望があれば記入）</span>
-                <span class="font-10">Additional requests (Salary, Positions, Work time and location, etc.)</span>
-            </div>
-            <div class="large-input mb-3"></div>
-
-            <!-- Dependent Section -->
-            <div class="form-section mb-4 p-0">
-                <div class="row" >
-                    <div class="form-group col-md-5 p-0">
-                        <label style="padding: 10px 10px; background-color: rgb(233, 236, 239); margin-left: 12px">
-                            <span class="font-15 d-block">扶養家族数 (配偶者を除く)</span>
-                            <span class="font-10 d-block">Number of dependents (excluding spouse)</span>
-                        </label>
-                        <div class="form-input"></div>
-                    </div>
-                    <div class="form-group col-md-3 p-0" style="border-left: 1px solid">
-                        <label style="padding: 10px 20px; background-color: rgb(233, 236, 239)">
-                            <span class="font-15 d-block">配偶者</span>
-                            <span class="font-10 d-block">Spouse</span>
-                        </label>
-                        <div class="radio-group">
-                            <input type="radio" name="spouse" id="yes" class="form-check-input">
-                            <label for="yes">
-                                <span class="d-block font-15">有</span>
-                                <span class="d-block font-10">Yes</span>
-                            </label>
-                            <input type="radio" name="spouse" id="no" class="form-check-input">
-                            <label for="no">
-                                <span class="d-block font-15">無</span>
-                                <span class="d-block font-10">No</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4 p-0"  style="border-left: 1px solid">
-                        <label style="padding: 10px 20px;background-color: rgb(233, 236, 239) ">
-                            <span class="font-15 d-block">配偶者の扶養義務</span>
-                            <span class="font-10 d-block">Dependent spouse</span>
-                        </label>
-                        <div class="radio-group">
-                            <input type="radio" name="dependent" id="yes-dependent" class="form-check-input">
-                            <label for="yes-dependent">
-                                <span class="d-block font-15">有</span>
-                                <span class="d-block font-10">Yes</span>
-                            </label>
-                            <input type="radio" name="dependent" id="no-dependent" class="form-check-input">
-                            <label for="no-dependent">
-                                <span class="d-block font-15">無</span>
-                                <span class="d-block font-10">No</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Final Note -->
-            <div class="section-title ">
-                <span class="font-15">採用者側の記入欄 (何も書かないでください)</span>
-                <span class="font-10">Please do not write anything here.</span>
-            </div>
-            <div class="large-input"></div>
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
-<style>
-    body {
-        font-family: 'Noto Sans JP', sans-serif;
-        padding: 30px 50px;
-    }
-    #block-1 {
-        .resume-container {
-            padding: 0;
-            /*max-width: 900px;*/
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+            background-color: #fff;
         }
 
-        .resume-title {
+        table.main, div.main {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        div.main > div {
+            float: left;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        td, th {
+            border: 1px solid #000; /* Combined the border properties */
+            padding: 8px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .border-right-unset {
+            border-right: none;
+        }
+
+        .border-left-unset {
+            border-left: none; /* Removed !important for CSS2 compatibility */
+        }
+
+        .main__block-head {
+            border: none; /* This applies to the block itself */
+        }
+
+        .main__block-head__cv-title {
+            text-align: left;
             font-size: 30px;
             font-weight: bold;
-            margin-bottom: unset;
+            margin-bottom: 0; /* Changed 'none' to '0' */
         }
 
-        .date-box {
-            display: flex;
-            gap: 5px;
-            align-items: center;
+        .main__block-head__date {
+            text-align: right;
         }
 
-        .date-input {
-            width: 100px;
-            border: 1px solid #000;
-            padding: 2px;
+        .main__block-head__date__title {
+            font-weight: 600;
+            font-size: 15px;
         }
 
-        .form-section {
-            border: 1px solid #000;
-            padding: 10px;
-            border-bottom: unset;
+        .main__block-head__date__date {
+            font-size: 10px;
+            font-weight: 600;
         }
 
-        .form-group {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid black;
-            padding: 5px 0;
-            min-height: 58px;
-
-            > label {
-                padding: 10px;
-                background: rgb(209 210 212);
-                color: #15171b;
-            }
+        .main__block-second__col-title {
+            border-right: none;
         }
 
-        .form-group:last-child {
-            border-bottom: none;
-        }
-
-        .form-group label {
-            width: 125px;
+        .main__block-second__col-title__title {
+            font-size: 15px;
             font-weight: bold;
-            font-size: 14px;
         }
 
-        .form-input {
-            /*flex-grow: 1;*/
-            /*height: 30px;*/
-            /*border: 1px solid #ccc;*/
-            /*margin-right: 5px;*/
+        .main__block-second__col-title__sub-title {
+            font-size: 10px;
         }
 
-        .birth-date {
-            display: flex;
-            gap: 5px;
-            align-items: center;
+        .main__block-second__col-text {
+            border-left: none;
         }
 
-        .birth-date span {
-            margin-right: 5px;
+        .main__block-second__col-img {
+            border-top: none;
+            border-right: none;
         }
 
-        .photo-section {
-            border: 1px solid #000;
-            text-align: center;
-            /*margin-bottom: 10px;*/
+        .main__block-head > td {
+            border: none;
         }
 
-        .photo-box {
+        /* Widths for colspan */
+        td[colspan="1"] {
+            width: 7.69%;
+        }
+
+        td[colspan="2"] {
+            width: 15.38%;
+        }
+
+        td[colspan="3"] {
+            width: 23.08%;
+        }
+
+        td[colspan="4"] {
+            width: 30.77%;
+        }
+
+        td[colspan="5"] {
+            width: 38.46%;
+        }
+
+        td[colspan="6"] {
+            width: 46.15%;
+        }
+
+        td[colspan="7"] {
+            width: 53.85%;
+        }
+
+        td[colspan="8"] {
+            width: 61.54%;
+        }
+
+        td[colspan="9"] {
+            width: 69.23%;
+        }
+
+        td[colspan="10"] {
+            width: 76.92%;
+        }
+
+        td[colspan="11"] {
+            width: 84.61%;
+        }
+
+        td[colspan="12"] {
+            width: 92.31%;
+        }
+
+        td[colspan="13"] {
             width: 100%;
-            height: 220px;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .photo-box p {
-            margin: 5px 0;
-            font-size: 12px;
-        }
-
-        .section-title {
-            background-color: #e9ecef;
-            padding: 5px 10px;
-            font-weight: bold;
-            border: 1px solid #000;
-            text-align: center;
-        }
-
-        .large-input {
-            height: 200px;
-            border: 1px solid #000;
-            border-top: unset;
-        }
-
-        .notes {
-            font-size: 12px;
-        }
-
-        .notes h5 {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .notes ol {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        #header__end {
-
-        }
-
-        .header__end__address {
-        }
-
-        .col-left {
-            padding-right: unset;
-        }
-
-        .col-right {
-            padding-left: unset;
-        }
-
-        .sub-title {
-            font-size: 8px;
-            font-weight: unset;
-            height: 22.5px;
-        }
-
-        .title {
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-
-        .col-left > .form-section {
-            border-right: unset;
-            padding: unset;
-
-            > .form-group {
-                padding: unset;
-            }
-        }
-
-        .col-right > .form-section {
-            border-left: unset;
-            padding: unset;
-
-            > .form-group {
-                padding: unset;
-            }
-        }
-    }
-    #block-2 {
-        .resume-container {
-            padding: 0 !important;
-            background-color: #fff;
-            margin: 40px auto;
-        }
-
-        .section-title {
-            background-color: #e9ecef;
-            padding: 5px 10px;
-            font-weight: bold;
-            border: 1px solid #000;
-        }
-
-        .form-section {
-            border: 1px solid #000;
-            padding: 10px;
-        }
-
-        .form-group {
-            display: flex;
-            align-items: center;
-            /*border-bottom: 1px dashed #ccc;*/
-            padding: 5px 0;
-        }
-
-        .form-group:last-child {
-            border-bottom: none;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            /*font-size: 14px;*/
-            margin-right: 10px;
-        }
-
-        .form-input {
-            flex-grow: 1;
-            height: 30px;
-            padding: 5px;
-        }
-
-        .large-input {
-            height: 150px;
-            border: 1px solid #000;
-            padding: 10px;
-        }
-
-        .form-check-input {
-            margin-right: 5px;
-            margin-left: 10px;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .radio-group label {
-            width: auto;
-            margin-right: 10px;
         }
 
         .font-15 {
-            font-size: 12px;
+            font-size: 15px;
         }
 
         .font-10 {
-            font-size: 8px;
+            font-size: 10px;
         }
-
-        .font-15 {
-            .col-md-1 {
-                font-weight: 600;
-            }
-        }
-    }
-</style>
+    </style>
+</head>
+<body>
+<table style="margin-bottom: 30px" class="main">
+    <tr class="main__block-head">
+        <td colspan="6" class="main__block-head__cv-title">
+            <div>
+                アルバイト履 歴 書
+            </div>
+        </td>
+        <td colspan="4" class="main__block-head__date">
+            <div class="main__block-head__date__title">
+                年 月 日　現在
+            </div>
+            <div class="main__block-head__date__date">
+                yyyy/mm/dd as of now
+            </div>
+        </td>
+        <td colspan="3">
+            <img style="width: 100%" src="../image/image-2025-06-04-15-46-00-326.png" alt="">
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title"
+            style="border-bottom: 1px dashed #000 !important;background: #e9ecef;">
+            <div class="main__block-second__col-title__title">フリガナ</div>
+            <div class="main__block-second__col-title__sub-title">Furigana</div>
+        </td>
+        <td colspan="8" class="main__block-second__col-text" style="border-bottom: 1px dashed #000 !important;">
+        </td>
+        <td colspan="2" rowspan="4" class="main__block-second__col-img">
+            写真 ID Photo (30mm×40mm)
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title"
+            style="border-top: 1px dashed #000 !important;background: #e9ecef;">
+            <div class="main__block-second__col-title__title">名 前</div>
+            <div class="main__block-second__col-title__sub-title">Name</div>
+        </td>
+        <td colspan="8" class="main__block-second__col-text" style="border-top: 1px dashed #000 !important;">
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">国 籍</div>
+            <div class="main__block-second__col-title__sub-title">Nationality</div>
+        </td>
+        <td colspan="8" class="main__block-second__col-text">
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">生年月日</div>
+            <div class="main__block-second__col-title__sub-title">Date of birth</div>
+        </td>
+        <td colspan="8" class="main__block-second__col-text">
+            Date of birth 年 月 日 (満 歳)
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">住 所</div>
+            <div class="main__block-second__col-title__sub-title">Address</div>
+        </td>
+        <td colspan="5" class="main__block-second__col-text border-right-unset">
+        </td>
+        <td colspan="2" class="main__block-second__col-title border-left-unset" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">近くの駅</div>
+            <div class="main__block-second__col-title__sub-title">Nearest Station</div>
+        </td>
+        <td colspan="3" class="main__block-second__col-text"></td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">電話番号</div>
+            <div class="main__block-second__col-title__sub-title">Tel</div>
+        </td>
+        <td colspan="3" class="main__block-second__col-text border-right-unset">
+        </td>
+        <td colspan="2" class="main__block-second__col-title border-left-unset" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">E-mail</div>
+        </td>
+        <td colspan="6" class="main__block-second__col-text"></td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">在留資格</div>
+            <div class="main__block-second__col-title__sub-title">Status of residence</div>
+        </td>
+        <td colspan="4" class="main__block-second__col-text border-right-unset">
+        </td>
+        <td colspan="2" class="main__block-second__col-title border-left-unset" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">在留期限</div>
+            <div class="main__block-second__col-title__sub-title">Period of stay</div>
+        </td>
+        <td colspan="4" class="main__block-second__col-text">
+            <div>年 月 日 まで有効</div>
+            <div>*Valid until yyyy/mm/dd</div>
+        </td>
+    </tr>
+    <tr class="main__block-second">
+        <td colspan="2" class="main__block-second__col-title" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">学校名</div>
+            <div class="main__block-second__col-title__sub-title">School name</div>
+        </td>
+        <td colspan="5" class="main__block-second__col-text border-right-unset">
+        </td>
+        <td colspan="2" class="main__block-second__col-title border-left-unset" style="background: #e9ecef;">
+            <div class="main__block-second__col-title__title">近くの駅</div>
+            <div class="main__block-second__col-title__sub-title">Nearest</div>
+        </td>
+        <td colspan="3" class="main__block-second__col-text">
+        </td>
+    </tr>
+</table>
+<table class="main">
+    <tr>
+        <td style="text-align: center; background-color: #e9ecef;">
+            <span class="font-15"
+                  style="margin-right: 20px; font-weight: 600">母国・日本での　学歴 ／ 職歴 ／ 受賞歴 </span>
+            <span class="font-10">Education history / Employment history / Awards received (in your home country &amp; in Japan)</span>
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 400px;"></td>
+    </tr>
+    <tr>
+        <td style="text-align: center; background-color: #e9ecef;">
+            <span class="font-15" style="margin-right: 20px; font-weight: 600">資格 ／ 免許 </span>
+            <span class="font-10">Qualifications / Licenses</span>
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 100px;"></td>
+    </tr>
+</table>
+<div class="main">
+    <div style="width: 5%">注意</div>
+    <div style="width: 50%">
+        <div>1.黒いボールペンで書く</div>
+        <div>2.全て日本語で書く（外国の学校名などはカタカナまたは英語で書く）</div>
+        <div>3.※マークがついているところは◯をつける</div>
+    </div>
+    <div style="width: 45%">
+        <div>1.Please write with a black ballpen.</div>
+        <div>2.Please write everything in Japanese.<br>
+            (Names of schools may be written either in katakana or English)
+        </div>
+        <div>3.Please circle the applicable option for section with ※</div>
+    </div>
+</div>
+</body>
+</html>

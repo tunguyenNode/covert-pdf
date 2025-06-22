@@ -1,0 +1,85 @@
+table.main, div.main {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: none;
+}
+
+div.main > div {
+    float: left;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+
+.border-right-unset {
+    border-right: none;
+}
+
+.border-left-unset {
+    border-left: none; /* Removed !important for CSS2 compatibility */
+}
+
+.main__block-head {
+    border: none; /* This applies to the block itself */
+}
+
+.main__block-head__cv-title {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0; /* Changed 'none' to '0' */
+}
+
+.main__block-head__date {
+    text-align: right;
+}
+
+.main__block-head__date__title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.main__block-head__date__date {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.main__block-second__col-title {
+    border-right: none;
+}
+
+.main__block-second__col-title__title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main__block-second__col-title__sub-title {
+    font-size: 10px;
+}
+
+.main__block-second__col-text {
+    border-left: none;
+}
+
+.main__block-second__col-img {
+    border-top: none;
+    border-right: none;
+}
+
+.main__block-head > td {
+    border: none;
+}
+
+
+
+.font-15 {
+    font-size: 15px;
+}
+
+.font-10 {
+    font-size: 10px;
+}

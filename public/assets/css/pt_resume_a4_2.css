@@ -1,0 +1,89 @@
+.main{
+    margin-bottom: 20px;
+}
+.main__header{
+    background: #e9ecef;
+}
+.main__block-2col{}
+.main__block-2col_title{
+    border-right: none;
+}
+.main__block-2col__text{
+    border-left: none;
+}
+
+.title{
+    font-size: 15px;
+    font-weight: 600;
+}
+.sub-title{
+    font-size: 10px;
+}
+.font-15{
+    font-size: 15px;
+}
+.d-inline-block{
+    display: inline-block;
+}
+
+.main__block-dependents{
+
+}
+.main__block-dependents__number-of-dependents,
+.main__block-dependents__spouse,
+.main__block-dependents__dependent-spouse{
+    background: #e9ecef;
+}
+
+.main__block-dependents__number-of-dependents .sub-title{
+}
+
+.main__block-dependents__number-of-dependents,
+.main__block-dependents__spouse,
+.main__block-dependents__dependent-spouse{
+    border-right: none;
+}
+.main__block-dependents__text,
+.main__block-dependents__radio{
+    border-left: none;
+    border-right: none;
+}
+
+.main__block-dependents__radio > label{
+    display: inline-block;
+}
+.main__block-dependents__radio > input[type='radio']{
+    display: inline-block;
+    margin: 4px 10px;
+    vertical-align: top;
+}
+
+.main__block-date__date-text{
+    border-right: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.main__block-date__can-work,
+.main__block-date__text,
+.main__block-date__can-not-work{
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.main__block-date__do-not-know-yet{
+    border-left: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.main__block-others{
+
+}
+.main__block-others__title{
+    border-right: none;
+    border-top: none;
+}
+.main__block-others__text{
+    border-top: none;
+    border-left: none;
+}

@@ -1,4 +1,6 @@
 <?php
+global $container;
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use mikehaertl\wkhtmlto\Pdf;
@@ -38,31 +40,44 @@ function createTempHtmlFile(string $html, string $storagePath, string $appUrl): 
  * @param string $htmlUrl
  * @param string $storagePath
  * @param string $wkhtmltopdfPath
- * @return string
+ * @return array
  * @throws Exception
  */
-function generatePdf(string $htmlUrl, string $storagePath, string $wkhtmltopdfPath): array
+function generatePdf(string $url, string $storagePath, string $wkhtmltopdfPath): array
 {
     if (!file_exists($wkhtmltopdfPath)) {
         throw new Exception('wkhtmltopdf binary not found at: ' . $wkhtmltopdfPath);
     };
-
-    $pdf = new Pdf([
-        'binary' => $wkhtmltopdfPath
-    ]);
-    $pdf->addPage($htmlUrl);
+//    $pdf = new Pdf([
+//        'binary' => $wkhtmltopdfPath,
+//        'page-size' => 'A3'
+//    ]);
+//    $pdf->addPage($htmlUrl);
 
     $pdfFileName = 'output_' . uniqid() . '.pdf';
     $pdfFilePath = $storagePath . '/' . $pdfFileName;
 
-    if (!$pdf->saveAs($pdfFilePath)) {
-        throw new Exception($pdf->getError() ?: 'Failed to generate PDF');
-    };
+    $pdfDir = dirname($pdfFilePath);
 
-    return [
-        'file_name' => $pdfFileName,
-        'file_path' => $pdfFilePath
-    ];
+    // Tạo thư mục nếu chưa tồn tại
+    if (!file_exists($pdfDir)) {
+        mkdir($pdfDir, 0777, true);
+    }
+    $command = "/usr/bin/wkhtmltopdf --page-size A3 https://www.google.com /home/tu/Documents/covert-pdf/src/../public/storage/output_685848b8e53b1.pdf";
+    exec($command, $output, $returnVar);
+    if ($returnVar === 0) {
+        return [
+            'file_name' => $pdfFileName,
+            'file_path' => $pdfFilePath
+        ];
+    } else {
+        die;
+    }
+//    if (!$pdf->saveAs($pdfFilePath)) {
+//        throw new Exception($pdf->getError() ?: 'Failed to generate PDF');
+//    };
+
+
 }
 
 /**
@@ -91,43 +106,30 @@ $app->post('/api/generate-pdf', function (Request $request, Response $response) 
         // Vệ sinh dữ liệu
         $data = sanitizeInput($data);
 
-        // Render template với dữ liệu
-        $twig = $app->getContainer()->get('twig');
-        if (!$twig->getLoader()->exists('page.html.twig')) {
-            throw new Exception('Template page.html.twig not found');
-        }
-        $html = $twig->render('page.html.twig', ['data' => $data]);
 
         // Đường dẫn storage
         $storagePath = __DIR__ . '/../' . $_ENV['STORAGE_PATH'];
-        if (!is_dir($storagePath) || !is_writable($storagePath)) {
-            throw new Exception('Storage directory is not accessible or writable');
-        }
-
         // Xóa file cũ
         cleanOldFiles($storagePath);
 
-        // Tạo file HTML tạm
-        $htmlUrl = createTempHtmlFile($html, $storagePath, $_ENV['APP_URL']);
+        $uri = $request->getUri();
+        $baseUrl = $uri->getScheme() . '://' . $uri->getHost() . ($uri->getPort() ? ':' . $uri->getPort() : '') . $request->getAttribute('basePath', '');
+
+        $url_view = $baseUrl . '/view/pt_resume';
+
 
         // Tạo file PDF
-        $generatePdf = generatePdf($htmlUrl, $storagePath, $_ENV['WKHTMLTOPDF_PATH']);
+        $generatePdf = generatePdf($url_view, $storagePath, $_ENV['WKHTMLTOPDF_PATH']);
 
 
         // Lưu metadata vào database
-        $pdfRecord = PdfFile::create([
-            'file_name' => $generatePdf['file_name'],
-            'file_path' => $generatePdf['file_path'],
-        ]);
-
-        // Xóa file HTML tạm
-        $tempHtmlFile = $storagePath . '/' . basename($htmlUrl);
-        if (file_exists($tempHtmlFile)) {
-            @unlink($tempHtmlFile);
-        }
+//        $pdfRecord = PdfFile::create([
+//            'file_name' => $generatePdf['file_name'],
+//            'file_path' => $generatePdf['file_path'],
+//        ]);
 
         // Trả về link PDF
-        $pdfUrl = $_ENV['APP_URL'] . '/storage/' . $pdfFileName;
+        $pdfUrl = $_ENV['APP_URL'] . '/storage/' . $generatePdf['file_name'];
         $response->getBody()->write(json_encode(['pdf_url' => $pdfUrl]));
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 

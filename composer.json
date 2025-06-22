@@ -1,16 +1,54 @@
 {
+  "name": "slim/twig-view",
+  "description": "Slim Framework 4 view helper built on top of the Twig 3 templating component",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "slim",
+    "framework",
+    "view",
+    "template",
+    "twig"
+  ],
   "require": {
     "slim/slim": "^4.10",
     "slim/psr7": "^1.5",
     "php-di/php-di": "^6.4",
-    "twig/twig": "^3.4",
+    "twig/twig": "^3.11",
     "mikehaertl/phpwkhtmltopdf": "^2.5",
     "vlucas/phpdotenv": "^5.4",
-    "illuminate/database": "^9.0"
-  },
+    "illuminate/database": "^9.0",
+    "slim/php-view": "^3.4"},
   "autoload": {
     "psr-4": {
       "App\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Slim\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpspec/prophecy-phpunit": "^2.0",
+    "phpstan/phpstan": "^1.10.59",
+    "phpunit/phpunit": "^9.6 || ^10",
+    "psr/http-factory": "^1.0",
+    "squizlabs/php_codesniffer": "^3.9"
+  },
+  "scripts": {
+    "sniffer:check": "phpcs --standard=phpcs.xml",
+    "sniffer:fix": "phpcbf --standard=phpcs.xml",
+    "stan": "phpstan analyse -c phpstan.neon --no-progress --ansi",
+    "test": "phpunit --configuration phpunit.xml --do-not-cache-result --colors=always",
+    "test:all": [
+      "@sniffer:check",
+      "@stan",
+      "@test:coverage"
+    ],
+    "test:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --configuration phpunit.xml --do-not-cache-result --colors=always --coverage-clover build/coverage/clover.xml --coverage-html build/coverage --coverage-text"
+    ]
   }
 }

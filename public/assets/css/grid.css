@@ -1,0 +1,66 @@
+/* Widths for colspan */
+td[colspan="1"] {
+    width: 7.69%;
+}
+
+td[colspan="2"] {
+    width: 15.38%;
+}
+
+td[colspan="3"] {
+    width: 23.08%;
+}
+
+td[colspan="4"] {
+    width: 30.77%;
+}
+
+td[colspan="5"] {
+    width: 38.46%;
+}
+
+td[colspan="6"] {
+    width: 46.15%;
+}
+
+td[colspan="7"] {
+    width: 53.85%;
+}
+
+td[colspan="8"] {
+    width: 61.54%;
+}
+
+td[colspan="9"] {
+    width: 69.23%;
+}
+
+td[colspan="10"] {
+    width: 76.92%;
+}
+
+td[colspan="11"] {
+    width: 84.61%;
+}
+
+td[colspan="12"] {
+    width: 92.31%;
+}
+
+td[colspan="13"] {
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #000; /* Combined the border properties */
+    padding: 8px;
+    vertical-align: top;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+    background-color: #fff;
+}

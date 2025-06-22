@@ -1,0 +1,183 @@
+.body{}
+.body__left{
+    float: left;
+    width: 49%;
+    padding: 0 0.5%;
+}
+.body__right{
+    width: 49%;
+    float: left;
+    padding: 0 0.5%;
+}
+
+table.body__left__main, div.body__left__main {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: none;
+}
+
+div.body__left__main > div {
+    float: left;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 5px;
+    line-height: 20px;
+}
+
+.body__left__main__block-head {
+    border: none; /* This applies to the block itself */
+}
+
+.body__left__main__block-head__cv-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0; /* Changed 'none' to '0' */
+}
+
+.body__left__main__block-head__date {
+    text-align: right;
+}
+
+.body__left__main__block-head__date__title {
+    font-weight: 600;
+    font-size: 8px;
+}
+
+.body__left__main__block-head__date__date {
+    font-size: 5px;
+    font-weight: 600;
+}
+
+.body__left__main__block-second__col-title {
+    border-right: none;
+}
+
+.body__left__main__block-second__col-title__title {
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.body__left__main__block-second__col-title__sub-title {
+    font-size: 5px;
+}
+
+.body__left__main__block-second__col-text {
+    border-left: none;
+}
+
+.body__left__main__block-second__col-img {
+    border-top: none;
+    border-right: none;
+}
+
+.body__left__main__block-head > td {
+    border: none;
+}
+
+.body__left__font-15 {
+    font-size: 8px;
+}
+
+.body__left__font-10 {
+    font-size: 5px;
+}
+
+table.body__right__main, div.body__right__main {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: none;
+}
+.body__right__main{
+    margin-bottom: 20px;
+}
+.body__right__main__header{
+    background: #e9ecef;
+}
+.body__right__main__block-2col{}
+.body__right__main__block-2col_title{
+    border-right: none;
+}
+.body__right__main__block-2col__text{
+    border-left: none;
+}
+
+.body__right__title{
+    font-size: 8px;
+    font-weight: 600;
+}
+.body__right__sub-title{
+    font-size: 5px;
+}
+.body__right__font-15{
+    font-size: 8px;
+}
+.body__right__d-inline-block{
+    display: inline-block;
+}
+
+.body__right__main__block-dependents{
+
+}
+.body__right__main__block-dependents__number-of-dependents,
+.body__right__main__block-dependents__spouse,
+.body__right__main__block-dependents__dependent-spouse{
+    background: #e9ecef;
+}
+
+.body__right__main__block-dependents__number-of-dependents .body__right__sub-title{
+}
+
+.body__right__main__block-dependents__number-of-dependents,
+.body__right__main__block-dependents__spouse,
+.body__right__main__block-dependents__dependent-spouse{
+    border-right: none;
+}
+.body__right__main__block-dependents__text,
+.body__right__main__block-dependents__radio{
+    border-left: none;
+    border-right: none;
+}
+
+.body__right__main__block-dependents__radio > label{
+    display: inline-block;
+}
+.body__right__main__block-dependents__radio > input[type='radio']{
+    display: inline-block;
+    margin: 4px 10px;
+    vertical-align: top;
+}
+
+.body__right__main__block-date__date-text{
+    border-right: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.body__right__main__block-date__can-work,
+.body__right__main__block-date__text,
+.body__right__main__block-date__can-not-work{
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.body__right__main__block-date__do-not-know-yet{
+    border-left: none;
+    border-bottom: none;
+    border-top: none ;
+}
+.body__right__main__block-others{
+
+}
+.body__right__main__block-others__title{
+    border-right: none;
+    border-top: none;
+}
+.body__right__main__block-others__text{
+    border-top: none;
+    border-left: none;
+}
